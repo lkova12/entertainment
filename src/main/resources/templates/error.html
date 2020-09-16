@@ -1,0 +1,26 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Error page</title>
+
+    <link rel="stylesheet" type=text/css th:href="@{/css/bootstrap.min.css}">
+</head>
+<body class="bg-light">
+<div class="container">
+    <div class="py-4 text-center">
+        <h3 class="text-dark">An error has occurred</h3>
+        <p class="lead" th:text="${errorMessage}"/>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-8 offset-md-3 offset-sm-2 text-center">
+            <a href="/" class="btn btn-primary">Back to search</a>
+        </div>
+    </div>
+</div>
+</body>
+</html>

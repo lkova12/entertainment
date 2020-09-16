@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="-1">
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Search for Books and Albums</title>
+
+    <link rel="stylesheet" type=text/css th:href="@{/css/bootstrap.min.css}">
+</head>
+<body class="bg-light">
+<div class="container">
+    <div class="py-3 text-center">
+        <div class="d-block mx-auto mb-4">
+            <img src="/css/img/albums.png" alt="" width="72" height="72">
+            <img src="/css/img/books.png" alt="" width="72" height="72">
+        </div>
+        <h3 class="text-dark">Search</h3>
+    </div>
+    <div class="row">
+        <div class="col-md-6 col-sm-8 offset-md-3 offset-sm-2 text-left">
+            <form role="form" method="GET" th:action="@{/search}" id="searchForm">
+                <div class="row mb-5">
+                    <div class="col-9">
+                        <input type="text"
+                               class="form-control"
+                               id="queryInput"
+                               name="query"
+                               required>
+                    </div>
+                    <div class="col-3">
+                        <button class="btn btn-primary btn-block" id="searchBtn" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="row">
+                <div class="col-12 order-md-2">
+                    <ul th:each="item:${items}" class="list-group mb-3">
+                        <li class="list-group-item d-flex justify-content-between bg-light">
+                            <div class="text-success">
+                                <h6 class="my-0" th:text="${item.title}"/>
+                                <small th:text="${item.authors}"/>
+                            </div>
+                            <span class="text-success" th:text="${item.type}"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
