@@ -7,7 +7,7 @@ RUN mvn clean install spring-boot:repackage
 FROM openjdk:8-jdk-alpine
 WORKDIR /entertainment
 EXPOSE 8080
-COPY --from=jar /entertainment/target/entertainment-0.0.1-SNAPSHOT.jar entertainment.jar
+COPY --from=jar /entertainment/target/entertainment-1.0.0.jar entertainment.jar
 COPY entry.sh .
 USER root
 ENTRYPOINT ["sh", "entry.sh"]
