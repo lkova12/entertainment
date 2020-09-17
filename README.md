@@ -82,7 +82,7 @@ All logs files are available in `<project dir>/logs` path.
 
 # Application pages
 ## Main screen
-![](docs/pages/main.png)
+![](docs/pages/main.PNG)
 
 ## Search action on main screen
-![](docs/pages/search.png)
+![](docs/pages/search.PNG)
