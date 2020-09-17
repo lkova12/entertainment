@@ -5,6 +5,9 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
+/**
+ * Configured utility class that contains predefined properties for application.properties config file.
+ */
 @Configuration
 @PropertySource("classpath:application.properties")
 @Getter

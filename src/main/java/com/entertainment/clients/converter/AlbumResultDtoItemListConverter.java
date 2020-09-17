@@ -8,6 +8,21 @@ import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+/**
+ * Convert the response from iTunes Search API to the list of Item object.
+ * An example of response from iTunes Search API:
+ * <pre>
+ * {
+ *  "resultCount":5,
+ *  "results": [
+ *      {"artistName":"Bush",
+ *      "collectionName":"Sixteen Stone (Remastered)"},
+ *      {"artistName":"John Williams",
+ *       "collectionName":"Harry Potter and the Sorcerer's Stone (Original Motion Picture Soundtrack)"}
+ *      ]
+ *  }
+ *</pre>
+ */
 @Service
 @RequiredArgsConstructor
 public class AlbumResultDtoItemListConverter implements Converter<AlbumResultDto, List<Item>> {

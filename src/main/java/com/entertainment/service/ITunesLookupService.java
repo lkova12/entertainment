@@ -15,6 +15,9 @@ import lombok.extern.slf4j.Slf4j;
 import lombok.val;
 import org.springframework.stereotype.Service;
 
+/**
+ * A service class that calls iTunes Search API for searching media content.
+ */
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -24,6 +27,14 @@ public class ITunesLookupService implements LookupService {
     private final ApplicationProperties applicationProperties;
     private final Converter<AlbumResultDto, List<Item>> albumResultDtoItemListConverter;
 
+    /**
+     * It calls iTunes Search API for searching media content by query value and other predefined parameters
+     * also checks if the result is not empty. If the result is empty, the method returns an empty list.
+     * If the result is not empty than it converts the API response to the items list.
+     *
+     * @param query
+     * @return a list of result items
+     */
     @Override
     public List<Item> findByQuery(String query) {
         val response = iTunesSearchApi.getAlbums(buildQueryParameters(query));
@@ -34,6 +45,13 @@ public class ITunesLookupService implements LookupService {
         return albumResultDtoItemListConverter.convert(response);
     }
 
+    /**
+     * It builds all necessary parameters for the proper call to iTunes Search API and searches by query value and
+     * specified parameters: media, entity, attribute and limit result.
+     *
+     * @param query
+     * @return a map of query parameters
+     */
     public Map<String, Object> buildQueryParameters(String query) {
         final Map<String, Object> queryParameters = new HashMap<>();
         queryParameters.put(WebUtils.TERM_QUERY_PARAM, query);
