@@ -62,7 +62,7 @@ The following tables defines the parameter keys and values which were specified 
 
 iTunes API
 Name in property file | Parameter Key | Value | Description 
----|---|---
+---|---|---|---
 `itunes.api.max.result` | limit | 5 | The number of search results you want the iTunes Store to return. For example: 25.The default is 50.
 `itunes.api.media` | media | music | The media type you want to search for. For example: movie. The default is all.
 `itunes.api.entity` | entity | album | 	The type of results you want returned, relative to the specified media type. For example: movieArtist for a movie media type search. The default is the track entity associated with the specified media type.
@@ -70,7 +70,7 @@ Name in property file | Parameter Key | Value | Description
 
 Google Books API
 Name in property file | Parameter Key | Value | Description 
----|---|---
+---|---|---|---
 `google.books.api.max.result` | maxResult | 5 | Maximum number of results to return. Acceptable values are 0 to 40, inclusive.
 `google.books.api.printType` | printType | books | 	Restrict to books or magazines. Acceptable values are: all, books, magazines.
 `google.books.api.key` | key | <key value> | This key is unique for each project and it is required to add to each request.
