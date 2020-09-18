@@ -30,7 +30,7 @@ docker run -it --rm -p 8080:8080 --name entertainment lesiakoval/entertainment:1
 
 If you want to run in detached mode then please use:
 ```bash
-docker run -itd --rm -p 8080:8080 --name entertainment lesiakoval/entertainment:1.0.1
+docker run -itd --rm -p 8080:8080 --name entertainment lesiakoval/entertainment:1.0.0
 ```
 And also to stop the container please run:
 ```bash
